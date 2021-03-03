@@ -8,12 +8,31 @@ public class PublishMsg extends Message {
 
 	// TODO:
 	// Implement object variables - a topic and a message is required
-
+	private String topic;
+	private String msg;
 	// Constructor, get/set-methods, and toString method
 	// as described in the project text
-	
-	public String getMessage() {
-		
-		throw new UnsupportedOperationException(TODO.method());
+	public PublishMsg(String user, String topic, String msg) {
+		super(MessageType.PUBLISH, user);
+		this.topic = topic;
+		this.msg = msg;
 	}
+	public String getMessage() {
+		return msg;
+	}
+	public void setMessage(String msg) {
+		this.msg = msg;
+	}
+	
+	public String getTopic() {
+		return topic;
+	}
+	public void setTopic(String topic) {
+		this.topic = topic;
+	}
+	@Override
+	public String toString() {
+		return "PublishMsg [topic=" + topic + ", msg=" + msg + "]";
+	}
+	
 }
